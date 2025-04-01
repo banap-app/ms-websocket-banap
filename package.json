@@ -1,0 +1,43 @@
+{
+    "name": "ms-websocket-banap",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "ts-node src/presentation/server.ts",
+        "build": "swc src -d dist"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/banap-app/ms-websocket-banap.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "type": "commonjs",
+    "bugs": {
+        "url": "https://github.com/banap-app/ms-websocket-banap/issues"
+    },
+    "homepage": "https://github.com/banap-app/ms-websocket-banap#readme",
+    "dependencies": {
+        "dotenv": "^16.4.7",
+        "express": "^5.1.0",
+        "socket.io": "^4.8.1"
+    },
+    "devDependencies": {
+        "@eslint/js": "^9.23.0",
+        "@swc/cli": "^0.6.0",
+        "@swc/core": "^1.11.16",
+        "@types/express": "^5.0.1",
+        "@types/node": "^22.13.17",
+        "@typescript-eslint/eslint-plugin": "^8.29.0",
+        "@typescript-eslint/parser": "^8.29.0",
+        "eslint": "^9.23.0",
+        "eslint-config-prettier": "^10.1.1",
+        "globals": "^16.0.0",
+        "prettier": "^3.5.3",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.8.2",
+        "typescript-eslint": "^8.29.0"
+    }
+}
