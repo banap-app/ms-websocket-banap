@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "start": "ts-node src/presentation/server.ts",
+        "start": "ts-node src/main.ts",
         "build": "swc src -d dist"
     },
     "repository": {

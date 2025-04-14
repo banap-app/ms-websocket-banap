@@ -1,10 +1,10 @@
-import { Message } from "../domain/entities/Message";
-import { MessageType } from "../domain/MessageType";
-import { UserID } from "../domain/UserID";
-import { MessageDispatcher } from "./MessageDispatcher";
+import { Message } from "../../domain/entities/Message";
+import { MessageType } from "../../domain/enums/MessageType";
+import { UserID } from "../../domain/valueObjects/UserID";
+import { IMessageDispatcher } from "../interfaces/MessageDispatcher";
 
 export class DispatchMessageUseCase {
-    constructor(private readonly messageDispatcher: MessageDispatcher) {}
+    constructor(private readonly messageDispatcher: IMessageDispatcher) {}
 
     execute(
         senderId: string,

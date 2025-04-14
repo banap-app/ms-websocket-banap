@@ -1,6 +1,6 @@
-import { MessageID } from "../MessageID";
-import { MessageType } from "../MessageType";
-import { UserID } from "../UserID";
+import { MessageID } from "../valueObjects/MessageID";
+import { MessageType } from "../enums/MessageType";
+import { UserID } from "../valueObjects/UserID";
 
 export class Message {
     constructor(
