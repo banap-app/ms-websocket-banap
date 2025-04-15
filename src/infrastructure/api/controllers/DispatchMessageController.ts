@@ -13,8 +13,31 @@ export class DispatchMessageController {
         );
     }
 
-    // TODO:
-    // public dispatchMessage(req: Request, res: Response): void {
+    public dispatchMessage(req: Request, res: Response): void {
+        try {
+            const { senderId, recipientId, type, content, timestamp } =
+                req.body;
 
-    // }
+            if (!senderId || !recipientId || !type || !content || !timestamp) {
+                res.status(400).json({ error: "Invalid input" });
+                return;
+            }
+
+            this.dispatchMessageUseCase.execute(
+                senderId,
+                recipientId,
+                type,
+                content,
+                timestamp,
+            );
+            res.status(200).json({ delivered: true });
+        } catch (error) {
+            res.status(500).json({
+                error:
+                    error instanceof Error
+                        ? error.message
+                        : "An unknown error occurred",
+            });
+        }
+    }
 }
