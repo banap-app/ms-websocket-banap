@@ -1,5 +1,5 @@
 import { MessageID } from "../valueObjects/MessageID";
-import { MessageType } from "../enums/MessageType";
+import { MessageType } from "../valueObjects/MessageType";
 import { UserID } from "../valueObjects/UserID";
 
 export class Message {
