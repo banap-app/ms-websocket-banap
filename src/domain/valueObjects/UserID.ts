@@ -11,6 +11,10 @@ export class UserID {
         return new UserID(value);
     }
 
+    public getValue(): string {
+        return this.value;
+    }
+
     public toString(): string {
         return this.value;
     }
