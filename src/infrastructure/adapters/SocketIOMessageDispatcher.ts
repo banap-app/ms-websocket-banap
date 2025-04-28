@@ -8,4 +8,8 @@ export class SocketIOMessageDispatcher implements IMessageDispatcher {
     dispatch(recipientId: string, message: Message): void {
         this.io.to(recipientId).emit("message", message);
     }
+
+    broadcast(message: Message): void {
+        this.io.emit("message", message);
+    }
 }
