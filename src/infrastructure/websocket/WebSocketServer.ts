@@ -27,7 +27,10 @@ export function createWebSocketServer(httpServer: HttpServer): SocketIOServer {
                     ? error.message
                     : "An unknown error ocurred",
             );
-            socket.disconnect(true);
+
+            if (socket.connected) {
+                socket.disconnect(true);
+            }
         }
     });
 
