@@ -5,7 +5,7 @@ import { UserID } from "../valueObjects/UserID";
 export class Message {
     constructor(
         public readonly id: MessageID,
-        public readonly senderId: UserID | null, // null for system messages
+        public readonly senderId: UserID | null,
         public readonly recipientId: UserID | null,
         public readonly type: MessageType, // e.g., 'notification', 'chat', 'system'
         public readonly content: string,
