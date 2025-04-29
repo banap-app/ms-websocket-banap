@@ -29,4 +29,15 @@ export class Message {
             timestamp,
         );
     }
+
+    public toJSON() {
+        return {
+            id: this.id.toString(),
+            senderId: this.senderId?.toString() || null,
+            recipientId: this.recipientId?.toString() || null,
+            type: this.type.toString(),
+            content: this.content,
+            timestamp: this.timestamp.toISOString(),
+        };
+    }
 }
