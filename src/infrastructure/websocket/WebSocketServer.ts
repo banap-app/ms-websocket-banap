@@ -1,6 +1,7 @@
 import { Server as HttpServer } from "http";
 import { Server as SocketIOServer } from "socket.io";
 import { UserID } from "../../domain/valueObjects/UserID";
+import { VerifyTokenMiddleware } from "./middlewares/WebSocketAuthMiddleware";
 
 export function createWebSocketServer(httpServer: HttpServer): SocketIOServer {
     const io = new SocketIOServer(httpServer, {
@@ -8,6 +9,8 @@ export function createWebSocketServer(httpServer: HttpServer): SocketIOServer {
             origin: "*",
         },
     });
+
+    io.use(VerifyTokenMiddleware);
 
     io.on("connection", (socket) => {
         try {
