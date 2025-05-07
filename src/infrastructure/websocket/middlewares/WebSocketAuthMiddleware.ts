@@ -4,7 +4,7 @@ export async function VerifyTokenMiddleware(
     socket: Socket,
     next: (err?: Error) => void,
 ): Promise<void> {
-    const token = socket.handshake.auth.token;
+    const token = socket.handshake.auth.token || socket.handshake.query.token;
 
     if (!token) {
         return next(new Error("Authentication token required"));

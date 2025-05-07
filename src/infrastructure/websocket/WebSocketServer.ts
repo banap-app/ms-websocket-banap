@@ -14,7 +14,7 @@ export function createWebSocketServer(httpServer: HttpServer): SocketIOServer {
 
     io.on("connection", (socket) => {
         try {
-            const userId = UserID.from(socket.handshake.query.UserID as string);
+            const userId = UserID.from(socket.handshake.query.userId as string);
 
             socket.join(userId.getValue());
 
